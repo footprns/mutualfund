@@ -1,7 +1,9 @@
 #!/bin/bash
 # sudo yum install w3m
+# sudo yum install phantomjs
 # wget https://www.w3.org/Tools/HTML-XML-utils/html-xml-utils-7.7.tar.gz
 # tar -zxvf html-xml-utils-7.7.tar.gz
+# wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
 # sudo su -
 # ./configure && make && make install
 #<span class="priceText__1853e8a5">1,559.4200</span>
