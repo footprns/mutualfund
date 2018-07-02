@@ -21,8 +21,6 @@ quotename=$(sed -n "/<$starttag>/,/<\/$endtag>/p" $outputfile | w3m -dump -cols 
 echo $quote\ $quotename\ $price
 echo $price | bc -l
 
-
 if (( $(echo "$targetprice >= $price" | bc -l) )); then
-  #statements
   echo "Target price belum tercapai"
 fi
