@@ -1,3 +1,2 @@
-BNPCAKR:IJ,USD,1.1486,1.137114,1.15985628,imankurniawan@gmail.com
-ASHDOBN:IJ,IDR,1269.77,1257.0723,1282.213746,imankurniawan@gmail.com
-SLB:US,USD,65.84,65.1816,66.485232,imankurniawan@gmail.com
+BNPCAKR:IJ,USD,1.1797,1.156106,1.262279,imankurniawan@gmail.com,22-Jul-18,2%,7%
+MANGSED:IJ,USD,1.1249,1.113651,1.13592402,imankurniawan@gmail.com,22-Jul-18,2%,5%
