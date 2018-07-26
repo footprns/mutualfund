@@ -5,7 +5,7 @@ INPUT=listquotes.txt
 OLDIFS=$IFS
 IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
-while read quote currency price lowerprice upperprice email baselinedate lowerpcg upperpcg
+while read quote currency price lowerprice upperprice email baselinedate lowerpcg upperpcg desc
 do
   link=https://www.bloomberg.com/quote/$quote
   outputfile=$quote
@@ -24,7 +24,7 @@ do
 	echo "upperprice : $upperprice"
 
   if (( $(echo "$runningprice >= $upperprice" | bc -l) )); then
-     echo "Subject: $quote" > msg.txt
+     echo "Subject: $quote $desc" > msg.txt
      echo "" >> msg.txt
      echo "Jual untung" >> msg.txt
      echo "baselinedate: $baselinedate" >> msg.txt
@@ -33,7 +33,7 @@ do
      echo "more than $upperpcg" >> msg.txt
      ssmtp $email < msg.txt
   elif (( $(echo "$runningprice <= $lowerprice" | bc -l) )); then
-    echo "Subject: $quote" > msg.txt
+    echo "Subject: $quote  $desc" > msg.txt
     echo "" >> msg.txt
     echo "Jual rugi" >> msg.txt
     echo "baselinedate: $baselinedate" >> msg.txt
