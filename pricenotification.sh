@@ -18,7 +18,7 @@ do
     echo $runningprice
   fi
 
-  echo "quote : $quote"
+  echo "quote : $quote $desc"
 	echo "price : $price"
 	echo "lowerprice : $lowerprice"
 	echo "upperprice : $upperprice"
