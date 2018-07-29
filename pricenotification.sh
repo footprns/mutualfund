@@ -7,9 +7,12 @@ IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
 while read quote currency price lowerprice upperprice email baselinedate lowerpcg upperpcg desc
 do
+  randomsleep=$(($RANDOM % 30))
   link=https://www.bloomberg.com/quote/$quote
+  sleep $randomsleep
   outputfile=$quote
   w3m -dump $link > $outputfile
+
   runningprice=$(grep $quote -A1 $outputfile | awk 'NR==2' | sed 's/,//g')
   if [[ -z "$runningprice" ]]; then
   runningprice=$(grep $quote -A4 $outputfile | awk 'NR==5' | sed 's/,//g' | sed 's/[^0-9]*//g')
@@ -17,7 +20,8 @@ do
   else
     echo $runningprice
   fi
-
+  echo "randomsleep: $randomsleep seconds"
+  echo "runningprice: $runningprice"
   echo "quote : $quote $desc"
 	echo "price : $price"
 	echo "lowerprice : $lowerprice"
