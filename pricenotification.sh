@@ -7,7 +7,7 @@ IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
 while read quote currency price lowerprice upperprice email baselinedate lowerpcg upperpcg desc
 do
-  randomsleep=$(($RANDOM % 30))
+  randomsleep=$((($RANDOM % 20)+20))
   link=https://www.bloomberg.com/quote/$quote
   sleep $randomsleep
   outputfile=$quote
