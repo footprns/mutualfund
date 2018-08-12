@@ -15,7 +15,7 @@ do
 
   runningprice=$(grep $quote -A1 $outputfile | awk 'NR==2' | sed 's/,//g')
   if [[ -z "$runningprice" ]]; then
-  runningprice=$(grep $quote -A4 $outputfile | awk 'NR==5' | sed 's/,//g' | sed 's/[^0-9]*//g')
+  runningprice=$(grep $quote -A4 $outputfile | awk 'NR==5' | sed 's/,//g' | sed 's/[A-Za-z]*//g')
     echo $runningprice
   else
     echo $runningprice
